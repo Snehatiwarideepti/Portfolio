@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneha Tiwari | Portfolio</title>
+    <style>
+        /* Make body full height and remove margins */
+        html, body {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          width: 100%;
+          font-family: Arial, sans-serif;
+          overflow-x: hidden;
+        }
+    
+        /* Full-screen particles background */
+        #particles-js {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1; /* behind your content */
+        }
+    
+        /* Your content styling */
+        .portfolio-content {
+          position: relative;
+          z-index: 1; /* above the particles */
+          color: #ffffff; /* text color */
+          text-align: center;
+          padding: 50px;
+        }
+      </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script> <!-- Placeholder for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+    <div id="particles-js"></div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script>
+        particlesJS("particles-js", {
+          particles: {
+            number: {
+              value: 100, // more particles for full background
+              density: { enable: true, value_area: 800 }
+            },
+            color: { value: "#00ffcc" }, // particle color (adjust for your background)
+            shape: { type: "circle" },
+            opacity: {
+              value: 0.7,
+              random: true,
+              anim: { enable: false }
+            },
+            size: {
+              value: 2, // small dots
+              random: true,
+              anim: { enable: false }
+            },
+            line_linked: {
+              enable: true,
+              distance: 120,
+              color: "#00ffcc", // lines between dots
+              opacity: 0.3,
+              width: 1
+            },
+            move: {
+              enable: true,
+              speed: 1.5, // slow movement
+              direction: "none",
+              random: true,
+              straight: false,
+              out_mode: "out",
+              bounce: false
+            }
+          },
+          interactivity: {
+            detect_on: "canvas",
+            events: {
+              onhover: { enable: true, mode: "repulse" },
+              onclick: { enable: true, mode: "push" },
+              resize: true
+            },
+            modes: {
+              repulse: { distance: 120, duration: 0.4 },
+              push: { particles_nb: 4 }
+            }
+          },
+          retina_detect: true
+        });
+      </script>
+      <!-- Add in body -->
+<div id="tsparticles"></div>
+
+<!-- Load tsparticles -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.min.js"></script>
+
+<script>
+tsParticles.load("tsparticles", {
+  fullScreen: { enable: true },
+  particles: {
+    number: { value: 100, density: { enable: true, area: 800 } },
+    color: { value: "#00ffcc" },
+    shape: { type: "circle" },
+    opacity: { value: 0.7, random: true },
+    size: { value: 2, random: true },
+    links: {
+      enable: true,
+      distance: 120,
+      color: "#00ffcc",
+      opacity: 0.3,
+      width: 1
+    },
+    move: { enable: true, speed: 1.5, random: true, straight: false, outModes: "out" }
+  },
+  interactivity: {
+    events: {
+      onHover: { enable: true, mode: "repulse" },
+      onClick: { enable: true, mode: "push" }
+    },
+    modes: { repulse: { distance: 120 }, push: { quantity: 4 } }
+  },
+  detectRetina: true
+});
+</script>
+      
+    <header id="navbar">
+        <nav class="container">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero section">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="greeting">Hello, I'm</span>
+                    <h1>Sneha Tiwari</h1>
+                    <p class="subtitle">B.Tech CSE Student & Aspiring Data Scientist</p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn primary">View Projects</a>
+                        <a href="https://drive.google.com/file/d/1SHtAoXKV_qQ0yvVzQ5ps94VIH8JXJiMH/view?usp=sharing" class="btn secondary" download><i class="fas fa-download"></i> Download Resume</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-blob"></div>
+                    <div class="hero-image">
+                        <img src="able.jpg" alt="Sneha Tiwari">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about section">
+            <div class="container container-large">
+                <div class="about-grid">
+                    <!-- Left Column: Quick Facts & Hobbies -->
+                    <div class="about-sidebar">
+                        <div class="about-card quick-facts">
+                            <h3>Quick Facts</h3>
+                            <div class="fact-item">
+                                <div class="fact-icon"><i class="fas fa-location-dot"></i></div>
+                                <div class="fact-info">
+                                    <span class="fact-label">Location</span>
+                                    <span class="fact-value">Uttar Pradesh, India</span>
+                                </div>
+                            </div>
+                            <div class="fact-item">
+                                <div class="fact-icon"><i class="fas fa-graduation-cap"></i></div>
+                                <div class="fact-info">
+                                    <span class="fact-label">Education</span>
+                                    <span class="fact-value">B.Tech in Computer Science</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about-card hobbies">
+                            <h3>When I'm Not Coding</h3>
+                            <div class="hobby-item">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Surfing Web</span>
+                            </div>
+                            <div class="hobby-item">
+                                <i class="fas fa-book"></i>
+                                <span>Reading Books</span>
+                            </div>
+                            <div class="hobby-item">
+                                <i class="fas fa-music"></i>
+                                <span>Listening to Music</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Journey & Approach -->
+                    <div class="about-main">
+                        <div class="about-section journey">
+                            <h2>My Journey</h2>
+                            <p>Hello! I’m <strong>Sneha Tiwari</strong>, an aspiring Data Scientist with a curiosity for understanding how data shapes the world around us. My journey into tech started with exploring how systems work, and gradually grew into an interest in analyzing data to uncover patterns and insights.
+                                I enjoy working with data—whether it’s cleaning, analyzing, or building simple models using Python and machine learning concepts. I’m particularly interested in applying these skills to solve real-world problems and make informed decisions.                              
+                                I’m continuously learning and improving, with the goal of building a strong foundation in data science and growing into a skilled professional in this field.
+                            </p>
+                            <p>Currently pursuing my B.Tech at Lovely Professional University, I’m focused on building a strong foundation in data science, statistics, and machine learning. I enjoy working with data—cleaning, analyzing, and building ML models to extract meaningful insights and solve real-world problems.
+                               I’m particularly interested in how data-driven and machine learning approaches can influence decision-making and create real impact. Along the way, I’m continuously learning and exploring new tools to grow as a data scientist.
+                            </p>
+                        </div>
+                        <div class="about-section approach">
+                            <h2>My Approach</h2>
+                            <p>I believe in building software that is not just functional but also meaningful and efficient. Every line of code I write is aimed at enhancing user experiences and providing robust solutions. I value clean architecture, continuous learning, and collaborative development to grow as a professional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills section">
+            <div class="container">
+                <h2 class="section-title">Technical Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Languages</h3>
+                        <div class="skill-tags">
+                            <span>C++</span><span>JavaScript</span><span>Java</span><span>Python</span><span>SQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-layer-group"></i> Frameworks & Libs</h3>
+                        <div class="skill-tags">
+                            <span>HTML & CSS</span><span>Flask</span><span>NumPy</span><span>Pandas</span><span>Scikit-learn</span><span>Matplotlib</span><span>Seaborn</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+                        <div class="skill-tags">
+                            <span>MySQL</span><span>Git/GitHub</span><span>VS Code</span><span>Power BI</span><span>Jupyter</span><span>WordPress</span><span>Canva</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <span class="project-tech">Python · Scikit-learn · Flask</span>
+                            <h3>Phishing Website Detection</h3>
+                            <p>Built a detection system using Random Forest with feature-engineered URL attributes, achieving 96.8% accuracy.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/Snehatiwarideepti/Phishing-Website-Detection" target="_blank"><i class="fab fa-github"></i> Source</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <span class="project-tech">C++ · Multithreading · OS</span>
+                            <h3>Thread Management Library</h3>
+                            <p>Developed a custom library to efficiently handle concurrent execution of tasks with mutex/semaphores and lifecycle management.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/rakhi120805/Scalable-Thread-Management-Library-" target="_blank"><i class="fab fa-github"></i> Source</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <span class="project-tech">WordPress · Elementor · Woo</span>
+                            <h3>Local Delivery Website</h3>
+                            <p>Designed and developed a responsive delivery website with integrated chatbot and optimized product display.</p>
+                            <div class="project-links">
+                                <a href="https://sabjimanditifin.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="training" class="training section">
+            <div class="container">
+                <h2 class="section-title">Training</h2>
+                <div class="certs-grid">
+                    <div class="cert-card">
+                        <div class="cert-image-placeholder">
+                            <img src="cert4.png" alt="Training Certificate" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="cert-info">
+                            <h4>Mastering JAVA for Application Development</h4>
+                            <p>Completed hands-on training focused on Core Java concepts, including OOP principles, exception handling, multithreading, file handling, and Collections Framework. Built modular Java applications and GUI-based programs using Java Swing while understanding JVM execution and application flow.</p>
+                            <p style="margin-top: 10px;"><strong>Core competencies:</strong> OOP in Java, Exception Handling, Multithreading, File Handling, Application Development.</p>
+                            <span class="timeline-date">Jul 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="extra-curricular" class="extra-curricular section">
+            <div class="container">
+                <h2 class="section-title">Extra-Curricular Activity</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <span class="project-tech">Community Service · NGO</span>
+                            <h3>Community Development Project</h3>
+                            <p>Contributed to a community development project with an NGO focused on children, women, and animal welfare. Supported awareness initiatives and social welfare activities, while developing teamwork and communication skills.</p>
+                            <div class="project-links">
+                                <span class="timeline-date">Jul 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="certifications section">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <div class="certs-grid">
+                    <div class="cert-card">
+                        <div class="cert-image-placeholder">
+                            <img src="cert1.png" alt="Certificate Placeholder" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="cert-info">
+                            <h4>Build Generative AI Apps</h4>
+                            <p>Infosys Springboard · Aug 2025</p>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-image-placeholder">
+                            <img src="cert2.png" alt="Certificate Placeholder" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="cert-info">
+                            <h4>ChatGPT-4 Prompt Engineering</h4>
+                            <p>Infosys Springboard · Aug 2025</p>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-image-placeholder">
+                            <img src="cert3.png" alt="Certificate Placeholder" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="cert-info">
+                            <h4>Computational Theory</h4>
+                            <p>Infosys Springboard · Aug 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="education section">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Lovely Professional University</h3>
+                            <span class="timeline-date">2023 - Present</span>
+                            <p>Bachelor of Technology in Computer Science & Engineering</p>
+                            <p class="timeline-grade">CGPA: 7.02</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Army Public School, Kanpur</h3>
+                            <span class="timeline-date">2021 - 2022</span>
+                            <p>Senior Secondary Education</p>
+                            <p class="timeline-grade">Percentage: 77.8%</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Army Public School, Kandrori</h3>
+                            <span class="timeline-date">2019 - 2020</span>
+                            <p>High School Education</p>
+                            <p class="timeline-grade">Percentage: 88.8%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Get In Touch</h3>
+                    <p><i class="fas fa-envelope"></i> snehatiwari3413@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91-9125148955</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/snehatiwari05/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Snehatiwarideepti" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sneha Tiwari. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Certificate Modal -->
+    <div id="cert-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="full-cert-img">
+        <div id="caption"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
