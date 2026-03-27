@@ -1,5 +1,5 @@
-// main.js
 document.addEventListener('DOMContentLoaded', () => {
+
     /* -------------------------------
        NAVBAR SCROLL HIGHLIGHT
     ---------------------------------*/
@@ -7,63 +7,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section');
 
-    function removeActive() {
-        navLinks.forEach(link => link.classList.remove('active'));
-      }
-      
-      // Click event for smooth scrolling + highlighting
-      navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-          removeActive();
-          this.classList.add('active');
-        });
-      });
+    window.addEventListener('scroll', () => {
+        let currentSection = '';
 
-    function updateActiveNav() {
-        const scrollPosition = window.scrollY + navbar.offsetHeight + 10; // current scroll + navbar height
-        let currentId = sections[0].id; // default to first section
-    
         sections.forEach(section => {
-            if (scrollPosition >= section.offsetTop) {
-                currentId = section.id; // last section that is above scroll position
+            const sectionTop = section.offsetTop - navbar.offsetHeight - 20;
+
+            if (window.scrollY >= sectionTop) {
+                currentSection = section.getAttribute('id');
             }
         });
-    
+
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentId}`) {
+            if (link.getAttribute('href') === '#' + currentSection) {
                 link.classList.add('active');
             }
         });
-    }
 
-    window.addEventListener('scroll', () => {
-        let currentsection = '';
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop - 120; // adjust offset
-          if (window.scrollY >= sectionTop) {
-            currentsection = section.getAttribute('id');
-          }
-        });
-      
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + currentsection) {
-            link.classList.add('active');
-          }
-        });
-      });
-
-    updateActiveNav();
+        // Navbar background on scroll
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(13, 17, 23, 0.95)';
+            navbar.style.padding = '0.7rem 0';
+        } else {
+            navbar.style.background = 'rgba(13, 17, 23, 0.8)';
+            navbar.style.padding = '1rem 0';
+        }
+    });
 
     /* -------------------------------
-       SMOOTH SCROLL FOR NAV LINKS
+       SMOOTH SCROLL
     ---------------------------------*/
     navLinks.forEach(link => {
         link.addEventListener('click', e => {
             e.preventDefault();
+
             const targetId = link.getAttribute('href').substring(1);
-            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+            const targetSection = document.getElementById(targetId);
+
+            targetSection.scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
 
@@ -71,10 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
        REVEAL ON SCROLL
     ---------------------------------*/
     const revealElements = document.querySelectorAll('.reveal');
+
     function revealOnScroll() {
         const windowHeight = window.innerHeight;
+
         revealElements.forEach(el => {
             const elementTop = el.getBoundingClientRect().top;
+
             if (elementTop < windowHeight - 100) {
                 el.classList.add('active');
             }
@@ -82,10 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // trigger on page load
+    revealOnScroll();
 
     /* -------------------------------
-       CERTIFICATE MODAL
+       CERTIFICATE MODAL (FIXED)
     ---------------------------------*/
     const modal = document.querySelector('#cert-modal');
     const modalImg = document.getElementById('full-cert-img');
@@ -94,29 +81,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     certs.forEach(cert => {
         cert.addEventListener('click', () => {
+
             modal.style.display = 'block';
-            modalImg.src = cert.src || '';
-            captionText.innerHTML = cert.alt || 'Certificate';
-         });
+
+            // Handle both IMG and DIV clicks
+            let img = cert.tagName === 'IMG'
+                ? cert
+                : cert.querySelector('img');
+
+            if (img) {
+                modalImg.src = img.src;
+                captionText.innerHTML = img.alt || 'Certificate';
+            }
+        });
     });
 
-document.querySelector('.close-modal').addEventListener('click', () => {
-    modal.style.display = 'none';
-});
+    // Close button
+    document.querySelector('.close-modal').addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
 
-window.addEventListener('click', e => {
-    if (e.target === modal) modal.style.display = 'none';
-});
+    // Click outside to close
+    window.addEventListener('click', e => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 
     /* -------------------------------
-       OPTIONAL: MENU TOGGLE (MOBILE)
+       MOBILE MENU TOGGLE
     ---------------------------------*/
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-links');
 
-    if(menuToggle){
+    if (menuToggle) {
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
     }
+
 });
